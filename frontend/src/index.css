@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Core Branding Colors */
+  --color-rootine-bg: #EAEBDC;      /* Light Green Background */
+  --color-primary-green: #ACBD8D;   /* Main Green */
+  --color-dark-green: #6E7B57;      /* Dark Green */
+  --color-accent-yellow: #F1CC5D;   /* Confirm / Action Button */
+  --color-text-black: #251813;      /* Deep Brownish Black Text */
+
+  /* Neutral & Functional Palette */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-neutral-dark: #434839;
+  --color-gray-soft: #D9D9D9;
+  --color-gray-light: #D2D2D2;
+  --color-gray-med: #828282;
+  --color-gray-alt: #E0E0E0;
+  --color-gray-off: #E6E6E6;
+  --color-gray-v-light: #EEEEEE;
+  --color-gray-dim: #979797;
+
+  /* Accent & System Colors */
+  --color-leaf-green: #34A853;
+  --color-sky-blue: #4285F4;
+  --color-rose-red: #EB4335;
+  --color-gold: #FBBC05;
+
+  /* Typography */
+  --font-display: "Finger Paint", cursive;
+  --font-sans: "Inter", "system-ui", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-rootine-bg text-text-black font-sans antialiased;
+  }
+  
+  h1, h2, h3 {
+    @apply font-display;
+  }
+}
