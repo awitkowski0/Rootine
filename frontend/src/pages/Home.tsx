@@ -1,58 +1,97 @@
-import { UserButton, useUser } from "@clerk/clerk-react";
+import { useState, useMemo } from "react";
 import { useLocation } from "wouter";
-import { Button } from "../components/ui/Button";
-import { Card } from "../components/ui/Card";
 import { motion } from "framer-motion";
+import { Instagram, Twitter } from "lucide-react";
+import { DINOS } from "../data/dinos";
+
+const MENU_ITEMS = [
+  "User Profile",
+  "Digital Journal",
+  "Mood Tracker",
+  "My Stats",
+  "My Time Capsules",
+  "Greenhouse Activities",
+  "My Greenhouse",
+  "Calm-ics",
+  "Friends",
+  "Blog",
+  "Discord Server",
+  "Resources",
+  "About Us"
+];
 
 export default function Home() {
-  const { user } = useUser();
   const [, setLocation] = useLocation();
+  const [selectedItem, setSelectedItem] = useState("User Profile");
+
+  // Pick a random dino for the footer
+  const randomDino = useMemo(() => {
+    return DINOS[Math.floor(Math.random() * DINOS.length)];
+  }, []);
 
   return (
-    <div className="min-h-screen bg-rootine-bg p-8">
-      <header className="flex justify-between items-center mb-12 max-w-4xl mx-auto">
-        <h1 className="text-3xl font-display text-text-black">Rootine</h1>
-        <UserButton />
-      </header>
-      
-      <main className="max-w-4xl mx-auto space-y-8">
-        <div className="text-center space-y-2 mb-12">
-            <h2 className="text-4xl font-bold text-dark-green">Welcome back, {user?.firstName}!</h2>
-            <p className="text-neutral-dark text-lg">Your dino is happy to see you.</p>
+    <div className="min-h-screen bg-rootine-bg flex flex-col items-center font-display overflow-x-hidden relative">
+      {/* Header */}
+      <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0 shadow-sm z-20">
+        {/* Flower Image - Left Center, Rotated */}
+        <div className="absolute left-2">
+             <img 
+                src="/header_flower.png" 
+                alt="Flower" 
+                className="w-36 h-auto transform -rotate-[-19.22deg]"
+             />
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Journal Card */}
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <Card 
-                    className="p-8 h-64 flex flex-col justify-between cursor-pointer border-primary-green/20 hover:border-primary-green transition-colors"
-                    onClick={() => setLocation("/journal/new")}
-                >
-                    <div className="space-y-4">
-                        <span className="text-4xl">📝</span>
-                        <h3 className="text-2xl font-display text-text-black">Daily Journal</h3>
-                        <p className="text-neutral-dark">Log your mood and thoughts for the day.</p>
-                    </div>
-                    <Button className="w-full">New Entry</Button>
-                </Card>
-            </motion.div>
+        {/* Center Cutout Circle */}
+        <div className="absolute bottom-0 w-36 h-18 bg-rootine-bg rounded-t-full border-none translate-y-[1px]"></div>
+      </div>
 
-            {/* Stats Card */}
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <Card 
-                    className="p-8 h-64 flex flex-col justify-between cursor-pointer border-primary-green/20 hover:border-primary-green transition-colors"
-                    onClick={() => setLocation("/stats")}
+      <main className="flex-1 w-full flex flex-col items-center justify-start px-2">
+        {/* Big Logo */}
+        <motion.div 
+            initial={{ opacity: 0, scale: 0.6 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="w-128 h-128 md:w-64 md:h-64 flex items-center justify-center"
+        >
+             <img
+                src="/rootine_logo_no_background.png"
+                alt="Rootine Logo"
+                className="w-full h-full object-contain drop-shadow-md"
+              />
+        </motion.div>
+
+        {/* Menu Buttons Grid */}
+        <div className="w-full max-w-3xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {MENU_ITEMS.map((item) => (
+                <motion.button
+                    key={item}
+                    onHoverStart={() => setSelectedItem(item)}
+                    whileHover={{ scale: 1.0 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`
+                        py-4 px-6 rounded-2xl text-lg font-bold shadow-md transition-colors 
+                        ${selectedItem === item 
+                            ? "bg-accent-yellow text-white ring-2 ring-white/50" 
+                            : "bg-dark-green text-white hover:bg-[#5b6648]"}
+                    `}
+                    onClick={() => {}}
                 >
-                    <div className="space-y-4">
-                        <span className="text-4xl">📊</span>
-                        <h3 className="text-2xl font-display text-text-black">Statistics</h3>
-                        <p className="text-neutral-dark">View your mood trends and insights.</p>
-                    </div>
-                    <Button variant="outline" className="w-full">View History</Button>
-                </Card>
-            </motion.div>
+                    {item}
+                </motion.button>
+            ))}
         </div>
+
       </main>
+
+      {/* Footer */}
+      <footer className="justify-center items-center-safe py-4">
+          <div className="w-32 h-32">
+              <img
+                  src={randomDino.image}
+                  alt="Dino Footer"
+                  className="w-full h-full object-contain drop-shadow-xl"
+              />
+          </div>
+      </footer>
     </div>
   );
 }
