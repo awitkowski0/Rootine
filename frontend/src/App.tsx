@@ -1,7 +1,6 @@
 import { Route, Switch, useLocation, Redirect } from "wouter";
 import { SignedIn, SignedOut, useUser, AuthenticateWithRedirectCallback } from "@clerk/clerk-react";
-import Login from "./pages/Login";
-import SignUpPage from "./pages/SignUp";
+import AuthFlow from "./pages/AuthFlow";
 import Home from "./pages/Home";
 import AdoptionFlow from "./pages/AdoptionFlow";
 import JournalEntry from "./components/features/journal/JournalEntry";
@@ -40,8 +39,12 @@ function App() {
   return (
     <Switch>
       {/* Public Routes */}
-      <Route path="/login" component={Login} />
-      <Route path="/sign-up" component={SignUpPage} />
+      <Route path="/login">
+        <AuthFlow initialMode="login" />
+      </Route>
+      <Route path="/sign-up">
+        <AuthFlow initialMode="signup" />
+      </Route>
 
       <Route path="/sso-callback">
         <AuthenticateWithRedirectCallback 

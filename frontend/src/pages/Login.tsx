@@ -65,7 +65,7 @@ export default function Login() {
 
     return (
         <div
-            className="min-h-screen bg-[#6E7B57] flex flex-col items-center justify-center p-4 font-display relative overflow-hidden">
+            className="min-h-screen bg-dark-green flex flex-col items-center justify-center p-4 font-display relative overflow-hidden">
             {/* Main Card Container */}
             <motion.div
                 initial={{opacity: 0, scale: 0.95}}
@@ -73,7 +73,7 @@ export default function Login() {
                 className="w-full max-w-[402px] rounded-[50px] shadow-2xl overflow-hidden mb-8 z-10"
             >
                 {/* Main Section - Form Area */}
-                <div className="bg-[#ACBD8D]">
+                <div className="bg-primary-green">
                     {/* Top Section - Logo Background */}
                     <div
                         className="bg-[#EAEBDC] h-[350px] rounded-b-[50px] flex items-center justify-center relative overflow-hidden">
@@ -157,7 +157,7 @@ export default function Login() {
 
                 {/* Center: Text */}
                 <div className="mb-4 text-center">
-                    <h3 className="font-display text-1xl text-[#EAEBDC] drop-shadow-md">Rooting for You!</h3>
+                    <h3 className="font-display text-1xl text-rootine-bg drop-shadow-md">Rooting for You!</h3>
                 </div>
 
                 {/* Right: Social Links */}
