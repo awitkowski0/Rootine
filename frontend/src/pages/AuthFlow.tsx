@@ -1,4 +1,4 @@
-import { useSignIn, useSignUp } from "@clerk/clerk-react";
+import { useSignIn, useSignUp, useClerk } from "@clerk/clerk-react";
 import { useState, useMemo, useEffect } from "react";
 import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
@@ -17,6 +17,7 @@ interface AuthFlowProps {
 export default function AuthFlow({ initialMode = "login" }: AuthFlowProps) {
   const { isLoaded: isSignInLoaded, signIn, setActive: setSignInActive } = useSignIn();
   const { isLoaded: isSignUpLoaded, signUp, setActive: setSignUpActive } = useSignUp();
+  const clerk = useClerk();
   const [, setLocation] = useLocation();
 
   const [mode, setMode] = useState<AuthMode>(initialMode);
@@ -63,6 +64,17 @@ export default function AuthFlow({ initialMode = "login" }: AuthFlowProps) {
       }
     } catch (err: any) {
       console.error("Login error:", err);
+      // Fallback to hosted login page for configuration/fatal errors
+      const isConfigError = err.errors?.some((e: any) => 
+        e.code !== "form_password_incorrect" && 
+        e.code !== "form_identifier_not_found"
+      );
+      
+      if (isConfigError) {
+         clerk.redirectToSignIn();
+         return;
+      }
+      
       setError(err.errors?.[0]?.longMessage || "Something went wrong. Please try again.");
     } finally {
       setIsLoading(false);
@@ -86,7 +98,38 @@ export default function AuthFlow({ initialMode = "login" }: AuthFlowProps) {
       setMode("verify");
     } catch (err: any) {
       console.error("SignUp error:", err);
-      setError(err.errors?.[0]?.longMessage || "Something went wrong.");
+      // Fallback: If username triggers invalid parameter error, try creating account without it
+      const isUsernameError = err.errors?.some((e: any) => 
+        e.code === 'form_param_nil' || 
+        (e.message && e.message.includes('username'))
+      );
+
+      if (isUsernameError && username) {
+        try {
+           await signUp.create({
+            emailAddress: email,
+            password,
+          });
+          await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
+          setMode("verify");
+          return; // Exit success path
+        } catch (retryErr: any) {
+           // If even the fallback fails, redirect to hosted flow
+           clerk.redirectToSignUp();
+           return;
+        }
+      } else {
+         // for other fatal errors (strategy not allowed etc)
+         const isConfigError = err.errors?.some((e: any) => 
+            e.code === 'strategy_not_allowed'
+         );
+         if (isConfigError) {
+             clerk.redirectToSignUp();
+             return;
+         }
+
+        setError(err.errors?.[0]?.longMessage || "Something went wrong.");
+      }
     } finally {
       setIsLoading(false);
     }
@@ -130,7 +173,8 @@ export default function AuthFlow({ initialMode = "login" }: AuthFlowProps) {
       });
     } catch (err: any) {
       console.error("Discord Login Error:", err);
-      setError("Failed to connect with Discord.");
+      // If our custom button fails (strategy blocked etc), send them to hosted page where it might work (or they see why)
+      clerk.redirectToSignIn(); 
     }
   };
 
@@ -350,6 +394,7 @@ export default function AuthFlow({ initialMode = "login" }: AuthFlowProps) {
           </a>
         </div>
       </div>
+      <div id="clerk-captcha" />
     </div>
   );
 }
