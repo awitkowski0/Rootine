@@ -25,7 +25,7 @@ export function useProfile() {
         const { data, error } = await supabase
           .from('profiles')
           .select('*')
-          .eq('user_id', user.id) // Corrected: user.id might be undefined in TS check if not guarded, but useEffect checks user
+          .eq('user_id', user!.id)
           .single();
 
         if (error && error.code !== 'PGRST116') { // PGRST116 is "not found"

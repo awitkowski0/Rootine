@@ -40,7 +40,7 @@ export default function Login() {
             } else {
                 console.log(result);
             }
-        } catch (err: never) {
+        } catch (err: any) {
             console.error("Login error:", err);
             setError(err.errors?.[0]?.longMessage || "Something went wrong. Please try again.");
         } finally {
@@ -57,7 +57,7 @@ export default function Login() {
                 redirectUrl: "/sso-callback",
                 redirectUrlComplete: "/",
             });
-        } catch (err: never) {
+        } catch (err: any) {
             console.error("Discord Login Error:", err);
             setError("Failed to connect with Discord.");
         }

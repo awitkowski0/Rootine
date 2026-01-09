@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Plus } from "lucide-react";
 import { DINOS } from "../data/dinos";
 import { useMemo } from "react";
-import { useProfile } from "../hooks/useProfile";
+import { useUser } from "@clerk/clerk-react";
 
 // Mock Journal Entries
 const ENTRIES = [
@@ -14,7 +14,7 @@ const ENTRIES = [
 
 export default function DigitalJournal() {
     const [, setLocation] = useLocation();
-    const { user } = useProfile();
+    const { user } = useUser();
     
     const footerDino = useMemo(() => {
         return DINOS[Math.floor(Math.random() * DINOS.length)];

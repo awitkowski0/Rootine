@@ -11,8 +11,8 @@ export default function MyGreenhouse() {
     
     // Find user's dino
     const myDino = useMemo(() => {
-        if (!profile?.dinoId) return null;
-        return DINOS.find(d => d.id === profile.dinoId) || DINOS[0];
+        if (!profile?.dino_type) return null;
+        return DINOS.find(d => d.id === profile.dino_type) || DINOS[0];
     }, [profile]);
     
     const footerDino = useMemo(() => {

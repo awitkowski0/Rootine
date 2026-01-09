@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { useLocation } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowLeft, Search, UserPlus, UserMinus, UserX } from "lucide-react";
+import { ArrowLeft, Search, UserPlus, UserMinus } from "lucide-react";
 import { DINOS } from "../data/dinos";
 
 export default function Friends() {
@@ -9,7 +9,7 @@ export default function Friends() {
     const [searchTerm, setSearchTerm] = useState("");
     
     // Mock Friends Data
-    const [friends, setFriends] = useState([
+    const [friends] = useState([
         { id: 1, username: "DinoLover123", name: "Sarah", avatar: "/avatar_placeholder_1.png", isFriend: true },
         { id: 2, username: "GreenThumb", name: "Mike", avatar: "/avatar_placeholder_2.png", isFriend: true },
         { id: 3, username: "ZenMaster", name: "Alex", avatar: "/avatar_placeholder_3.png", isFriend: false }, // Not friend yet (for search demo)

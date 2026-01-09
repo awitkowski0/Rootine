@@ -16,8 +16,6 @@ import MyStats from "./pages/MyStats";
 import DigitalJournal from "./pages/DigitalJournal";
 import NewJournalEntry from "./pages/NewJournalEntry";
 import AdoptionFlow from "./pages/AdoptionFlow";
-import JournalEntry from "./components/features/journal/JournalEntry";
-import Statistics from "./components/features/stats/Statistics";
 import { useProfile } from "./hooks/useProfile";
 import { useEffect } from "react";
 
