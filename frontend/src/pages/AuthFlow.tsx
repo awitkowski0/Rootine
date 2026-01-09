@@ -350,6 +350,7 @@ export default function AuthFlow({ initialMode = "login" }: AuthFlowProps) {
           </a>
         </div>
       </div>
+      <div id="clerk-captcha" />
     </div>
   );
 }
