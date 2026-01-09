@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: rootine_db
+    environment:
+      POSTGRES_USER: rootine_user
+      POSTGRES_PASSWORD: rootine_password
+      POSTGRES_DB: rootine_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

@@ -1,1 +1,36 @@
-frontend/.env
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Node / Frontend
+node_modules/
+dist/
+build/
+coverage/
+.bun/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# IDEs
+.idea/
+.vscode/
+
+# System
+.DS_Store
+
+# Local Database
+*.db
+*.sqlite
+sql_app.db
