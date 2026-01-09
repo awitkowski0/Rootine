@@ -21,6 +21,7 @@ export default function AuthFlow({ initialMode = "login" }: AuthFlowProps) {
 
   const [mode, setMode] = useState<AuthMode>(initialMode);
   const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [code, setCode] = useState("");
   const [error, setError] = useState("");
@@ -77,6 +78,7 @@ export default function AuthFlow({ initialMode = "login" }: AuthFlowProps) {
     try {
       await signUp.create({
         emailAddress: email,
+        username,
         password,
       });
 
@@ -186,11 +188,22 @@ export default function AuthFlow({ initialMode = "login" }: AuthFlowProps) {
             onSubmit={mode === "login" ? handleLogin : handleSignUp} 
             className="space-y-4"
         >
+            {mode === "signup" && (
+                <Input
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    placeholder="Username"
+                    autoComplete="username"
+                    className="bg-white border-none placeholder:text-gray-400"
+                />
+            )}
+
             <Input
-                type="email"
+                type="text"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
+                placeholder={mode === "login" ? "Email or Username" : "Email"}
                 autoComplete="email"
                 className="bg-white border-none placeholder:text-gray-400"
             />
