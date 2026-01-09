@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { DINOS } from "../data/dinos";
 
@@ -12,13 +13,13 @@ const MENU_ITEMS = [
     "My Greenhouse",
     "Calm-ics",
     "Friends",
-    "Blog",
     "Discord Server",
     "Resources",
     "About Us"
 ];
 
 export default function Home() {
+    const [, setLocation] = useLocation();
     const [selectedItem, setSelectedItem] = useState("User Profile");
 
     // Pick a random dino for the footer
@@ -78,7 +79,35 @@ export default function Home() {
                                             ? "bg-accent-yellow text-white ring-2 ring-white/50"
                                             : "bg-dark-green text-white hover:bg-[#5b6648]"}
                             `}
-                                    onClick={() => {}}
+                                    onClick={() => {
+                                        if (item === "User Profile") {
+                                            setLocation("/profile");
+                                        } else if (item === "Mood Tracker") {
+                                            setLocation("/mood-tracker");
+                                        } else if (item === "Resources") {
+                                            setLocation("/resources");
+                                        } else if (item === "Greenhouse Activities") {
+                                            setLocation("/greenhouse-activities");
+                                        } else if (item === "My Greenhouse") {
+                                            setLocation("/my-greenhouse");
+                                        } else if (item === "Calm-ics") {
+                                            setLocation("/calmics");
+                                        } else if (item === "Friends") {
+                                            setLocation("/friends");
+                                        } else if (item === "Digital Journal") {
+                                            setLocation("/journal");
+                                        } else if (item === "My Stats") {
+                                            setLocation("/stats");
+                                        } else if (item === "My Time Capsules") {
+                                            setLocation("/my-time-capsules");
+                                        } else if (item === "Discord Server") {
+                                            window.open("https://discord.gg/pxunB48MDA", "_blank");
+                                        } else if (item === "About Us") {
+                                            setLocation("/about-us");
+                                        } else {
+                                            setLocation("/coming-soon");
+                                        }
+                                    }}
                                 >
                                     {item}
                                 </motion.button>

@@ -2,6 +2,19 @@ import { Route, Switch, useLocation, Redirect } from "wouter";
 import { SignedIn, SignedOut, useUser, AuthenticateWithRedirectCallback } from "@clerk/clerk-react";
 import AuthFlow from "./pages/AuthFlow";
 import Home from "./pages/Home";
+import UserProfile from "./pages/UserProfile";
+import MoodTracker from "./pages/MoodTracker";
+import Resources from "./pages/Resources";
+import GreenhouseActivities from "./pages/GreenhouseActivities";
+import Calmics from "./pages/Calmics";
+import Friends from "./pages/Friends";
+import ComingSoon from "./pages/ComingSoon";
+import AboutUs from "./pages/AboutUs";
+import MyGreenhouse from "./pages/MyGreenhouse";
+import MyTimeCapsules from "./pages/MyTimeCapsules";
+import MyStats from "./pages/MyStats";
+import DigitalJournal from "./pages/DigitalJournal";
+import NewJournalEntry from "./pages/NewJournalEntry";
 import AdoptionFlow from "./pages/AdoptionFlow";
 import JournalEntry from "./components/features/journal/JournalEntry";
 import Statistics from "./components/features/stats/Statistics";
@@ -65,10 +78,21 @@ function App() {
         </SignedOut>
       </Route>
 
+      <Route path="/journal">
+        <SignedIn>
+            <ProtectedRoute>
+              <DigitalJournal />
+            </ProtectedRoute>
+        </SignedIn>
+        <SignedOut>
+            <Redirect to="/login" />
+        </SignedOut>
+      </Route>
+
       <Route path="/journal/new">
         <SignedIn>
             <ProtectedRoute>
-              <JournalEntry />
+              <NewJournalEntry />
             </ProtectedRoute>
         </SignedIn>
         <SignedOut>
@@ -79,7 +103,7 @@ function App() {
       <Route path="/stats">
         <SignedIn>
             <ProtectedRoute>
-              <Statistics />
+              <MyStats />
             </ProtectedRoute>
         </SignedIn>
         <SignedOut>
@@ -91,6 +115,116 @@ function App() {
         <SignedIn>
             <ProtectedRoute>
               <Home />
+            </ProtectedRoute>
+        </SignedIn>
+        <SignedOut>
+            <Redirect to="/login" />
+        </SignedOut>
+      </Route>
+
+      <Route path="/profile">
+        <SignedIn>
+            <ProtectedRoute>
+              <UserProfile />
+            </ProtectedRoute>
+        </SignedIn>
+        <SignedOut>
+            <Redirect to="/login" />
+        </SignedOut>
+      </Route>
+
+      <Route path="/mood-tracker">
+        <SignedIn>
+            <ProtectedRoute>
+              <MoodTracker />
+            </ProtectedRoute>
+        </SignedIn>
+        <SignedOut>
+            <Redirect to="/login" />
+        </SignedOut>
+      </Route>
+
+      <Route path="/resources">
+        <SignedIn>
+            <ProtectedRoute>
+              <Resources />
+            </ProtectedRoute>
+        </SignedIn>
+        <SignedOut>
+            <Redirect to="/login" />
+        </SignedOut>
+      </Route>
+
+      <Route path="/greenhouse-activities">
+        <SignedIn>
+            <ProtectedRoute>
+              <GreenhouseActivities />
+            </ProtectedRoute>
+        </SignedIn>
+        <SignedOut>
+            <Redirect to="/login" />
+        </SignedOut>
+      </Route>
+
+      <Route path="/calmics">
+        <SignedIn>
+            <ProtectedRoute>
+              <Calmics />
+            </ProtectedRoute>
+        </SignedIn>
+        <SignedOut>
+            <Redirect to="/login" />
+        </SignedOut>
+      </Route>
+
+      <Route path="/friends">
+        <SignedIn>
+            <ProtectedRoute>
+              <Friends />
+            </ProtectedRoute>
+        </SignedIn>
+        <SignedOut>
+            <Redirect to="/login" />
+        </SignedOut>
+      </Route>
+
+      <Route path="/coming-soon">
+        <SignedIn>
+            <ProtectedRoute>
+              <ComingSoon />
+            </ProtectedRoute>
+        </SignedIn>
+        <SignedOut>
+            <Redirect to="/login" />
+        </SignedOut>
+      </Route>
+
+      <Route path="/about-us">
+        <SignedIn>
+            <ProtectedRoute>
+              <AboutUs />
+            </ProtectedRoute>
+        </SignedIn>
+        <SignedOut>
+            <Redirect to="/login" />
+        </SignedOut>
+      </Route>
+
+      <Route path="/my-greenhouse">
+        <SignedIn>
+            <ProtectedRoute>
+              <MyGreenhouse />
+            </ProtectedRoute>
+        </SignedIn>
+        <SignedOut>
+            <Redirect to="/login" />
+        </SignedOut>
+      </Route>
+
+      <Route path="/my-time-capsules">
+        <SignedIn>
+            <ProtectedRoute>
+              <MyTimeCapsules />
             </ProtectedRoute>
         </SignedIn>
         <SignedOut>
