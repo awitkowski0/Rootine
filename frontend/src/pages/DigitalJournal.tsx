@@ -29,7 +29,7 @@ export default function DigitalJournal() {
                 className="w-full max-w-[402px] bg-rootine-bg rounded-[50px] shadow-2xl overflow-hidden mb-8 z-10"
             >
                 {/* Header */}
-                <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0 shadow-sm z-20">
+                <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0  z-20">
                      <button 
                         onClick={() => setLocation("/")}
                         className="absolute left-6 top-6 text-white hover:text-rootine-bg transition-colors"
@@ -69,7 +69,7 @@ export default function DigitalJournal() {
                             <motion.div
                                 key={entry.id}
                                 whileHover={{ scale: 1.05 }}
-                                className="bg-white p-4 rounded-2xl shadow-sm border border-black/5 aspect-[3/4] flex flex-col relative overflow-hidden cursor-pointer hover:border-primary-green/30"
+                                className="bg-white p-4 rounded-2xl  border border-black/5 aspect-[3/4] flex flex-col relative overflow-hidden cursor-pointer hover:border-primary-green/30"
                             >
                                 <div className="absolute top-0 left-0 w-full h-2 bg-primary-green/20"></div>
                                 <h3 className="font-bold text-dark-green text-sm mb-1 mt-2 line-clamp-1">{entry.title}</h3>

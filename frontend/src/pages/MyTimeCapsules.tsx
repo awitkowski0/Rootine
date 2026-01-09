@@ -27,7 +27,7 @@ export default function MyTimeCapsules() {
                 className="w-full max-w-[402px] bg-rootine-bg rounded-[50px] shadow-2xl overflow-hidden mb-8 z-10"
             >
                 {/* Header */}
-                <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0 shadow-sm z-20">
+                <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0  z-20">
                      <button 
                         onClick={() => setLocation("/")}
                         className="absolute left-6 top-6 text-white hover:text-rootine-bg transition-colors"
@@ -54,7 +54,7 @@ export default function MyTimeCapsules() {
                             <motion.div
                                 key={capsule.id}
                                 whileHover={{ scale: 1.02 }}
-                                className="bg-white p-4 rounded-2xl shadow-sm border border-black/5 cursor-pointer hover:border-primary-green/30 transition-colors"
+                                className="bg-white p-4 rounded-2xl  border border-black/5 cursor-pointer hover:border-primary-green/30 transition-colors"
                             >
                                 <div className="flex justify-between items-center mb-2">
                                     <h3 className="font-bold text-dark-green text-lg">{capsule.title}</h3>

@@ -39,7 +39,7 @@ export default function AdoptionFlow() {
             className="w-full max-w-[402px] bg-rootine-bg rounded-[50px] shadow-2xl overflow-hidden mb-8 z-10"
         >
             {/* Header */}
-            <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0 shadow-sm z-20">
+            <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0  z-20">
                     {/* Flower Image - Left Center, Rotated */}
                     <div className="absolute left-2">
                         <img
@@ -71,7 +71,7 @@ export default function AdoptionFlow() {
                                 relative p-4 rounded-2xl flex flex-col items-center justify-center transition-all
                                 ${selectedDino.id === dino.id
                                     ? "bg-accent-yellow ring-4 ring-primary-green/30 shadow-lg"
-                                    : "bg-white border-2 border-transparent hover:border-primary-green/50 shadow-sm"
+                                    : "bg-white border-2 border-transparent hover:border-primary-green/50 "
                                 }
                             `}
                         >

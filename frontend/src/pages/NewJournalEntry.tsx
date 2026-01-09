@@ -61,7 +61,7 @@ export default function NewJournalEntry() {
                 className="w-full max-w-[402px] bg-rootine-bg rounded-[50px] shadow-2xl overflow-hidden mb-8 z-10 flex flex-col h-[800px]"
             >
                 {/* Header */}
-                <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0 shadow-sm z-20">
+                <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0  z-20">
                      <button 
                         onClick={() => setLocation("/journal")}
                         className="absolute left-6 top-6 text-white hover:text-rootine-bg transition-colors"
@@ -91,9 +91,9 @@ export default function NewJournalEntry() {
                             placeholder="Title..."
                         />
                         <div className="flex gap-2">
-                             <button onClick={addText} className="p-2 bg-white rounded-full shadow-sm text-dark-green hover:bg-gray-50"><Type size={20} /></button>
-                             <button onClick={addImage} className="p-2 bg-white rounded-full shadow-sm text-dark-green hover:bg-gray-50"><ImageIcon size={20} /></button>
-                             <button onClick={handleSave} className="p-2 bg-primary-green rounded-full shadow-sm text-white hover:bg-[#5b6648]"><Save size={20} /></button>
+                             <button onClick={addText} className="p-2 bg-white rounded-full  text-dark-green hover:bg-gray-50"><Type size={20} /></button>
+                             <button onClick={addImage} className="p-2 bg-white rounded-full  text-dark-green hover:bg-gray-50"><ImageIcon size={20} /></button>
+                             <button onClick={handleSave} className="p-2 bg-primary-green rounded-full  text-white hover:bg-[#5b6648]"><Save size={20} /></button>
                         </div>
                      </div>
                      

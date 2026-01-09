@@ -85,13 +85,13 @@ export default function UserProfile() {
 
                         {/* Actions */}
                         <div className="flex gap-4 mb-8">
-                             <button className="flex items-center gap-2 bg-dark-green text-white px-4 py-2 rounded-xl text-sm font-bold shadow-sm hover:bg-[#5b6648] transition-colors">
+                             <button className="flex items-center gap-2 bg-dark-green text-white px-4 py-2 rounded-xl text-sm font-bold  hover:bg-[#5b6648] transition-colors">
                                 <Settings size={16} />
                                 Edit Account
                              </button>
                              <button 
                                 onClick={handleSignOut}
-                                className="flex items-center gap-2 bg-rose-red text-white px-4 py-2 rounded-xl text-sm font-bold shadow-sm hover:bg-[#d13b2e] transition-colors"
+                                className="flex items-center gap-2 bg-rose-red text-white px-4 py-2 rounded-xl text-sm font-bold  hover:bg-[#d13b2e] transition-colors"
                              >
                                 <LogOut size={16} />
                                 Log Out
@@ -103,14 +103,14 @@ export default function UserProfile() {
                             <h3 className="text-xl font-bold text-dark-green mb-4">Recent Posts</h3>
                             <div className="space-y-4">
                                 {/* Placeholder Post 1 */}
-                                <div className="bg-white p-4 rounded-2xl shadow-sm border border-black/5">
+                                <div className="bg-white p-4 rounded-2xl  border border-black/5">
                                      <div className="h-24 bg-gray-100 rounded-xl mb-2 flex items-center justify-center text-gray-300">
                                          Placeholder Image
                                      </div>
                                      <p className="text-xs text-neutral-dark">Today I felt really happy because I saw a cool bird!</p>
                                 </div>
                                 {/* Placeholder Post 2 */}
-                                <div className="bg-white p-4 rounded-2xl shadow-sm border border-black/5">
+                                <div className="bg-white p-4 rounded-2xl  border border-black/5">
                                      <div className="h-24 bg-gray-100 rounded-xl mb-2 flex items-center justify-center text-gray-300">
                                          Placeholder Image
                                      </div>

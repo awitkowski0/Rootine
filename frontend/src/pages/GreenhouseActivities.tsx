@@ -20,7 +20,7 @@ export default function GreenhouseActivities() {
                 className="w-full max-w-[402px] bg-rootine-bg rounded-[50px] shadow-2xl overflow-hidden mb-8 z-10"
             >
                 {/* Header */}
-                <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0 shadow-sm z-20">
+                <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0  z-20">
                      <button 
                         onClick={() => setLocation("/")}
                         className="absolute left-6 top-6 text-white hover:text-rootine-bg transition-colors"
@@ -59,7 +59,7 @@ export default function GreenhouseActivities() {
                      </div>
 
                      {/* Placeholder for current activity image/card */}
-                     <div className="mt-8 w-full p-4 bg-white rounded-2xl shadow-sm border border-black/5">
+                     <div className="mt-8 w-full p-4 bg-white rounded-2xl  border border-black/5">
                         <div className="h-32 bg-gray-100 rounded-xl flex items-center justify-center text-gray-300">
                             Current Activity Placeholder
                         </div>

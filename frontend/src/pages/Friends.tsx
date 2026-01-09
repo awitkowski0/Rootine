@@ -33,7 +33,7 @@ export default function Friends() {
                 className="w-full max-w-[402px] bg-rootine-bg rounded-[50px] shadow-2xl overflow-hidden mb-8 z-10"
             >
                 {/* Header */}
-                <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0 shadow-sm z-20">
+                <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0  z-20">
                      <button 
                         onClick={() => setLocation("/")}
                         className="absolute left-6 top-6 text-white hover:text-rootine-bg transition-colors"
@@ -74,7 +74,7 @@ export default function Friends() {
                                 <motion.div
                                     key={person.id}
                                     layout
-                                    className="bg-white p-3 rounded-xl shadow-sm border border-black/5 flex items-center justify-between"
+                                    className="bg-white p-3 rounded-xl  border border-black/5 flex items-center justify-between"
                                 >
                                     <div className="flex items-center gap-3">
                                         <div className="w-10 h-10 bg-gray-200 rounded-full"></div> {/* Placeholder Avatar */}

@@ -28,7 +28,7 @@ export default function MyGreenhouse() {
                 className="w-full max-w-[402px] bg-rootine-bg rounded-[50px] shadow-2xl overflow-hidden mb-8 z-10"
             >
                 {/* Header */}
-                <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0 shadow-sm z-20">
+                <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0  z-20">
                      <button 
                         onClick={() => setLocation("/")}
                         className="absolute left-6 top-6 text-white hover:text-rootine-bg transition-colors z-30"
@@ -69,7 +69,7 @@ export default function MyGreenhouse() {
                                 />
                             </motion.div>
                             <h3 className="text-xl font-bold text-dark-green">{myDino.name}</h3>
-                            <div className="mt-4 px-4 py-2 bg-white rounded-xl shadow-sm text-center">
+                            <div className="mt-4 px-4 py-2 bg-white rounded-xl  text-center">
                                 <p className="text-xs text-neutral-dark">Happiness Level</p>
                                 <div className="flex gap-1 justify-center mt-1">
                                     {[1,2,3,4,5].map(i => (

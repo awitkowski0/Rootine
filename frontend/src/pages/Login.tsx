@@ -88,7 +88,7 @@ export default function Login() {
                     <div className={"p-8 pt-10 min-h-[400px]"}>
                         {/* Discord Button */}
                         <Button
-                            className="w-full mb-6 bg-[#EEEEEE] text-text-black border-2 border-black/5 hover:bg-white py-4 rounded-2xl flex items-center justify-center gap-3 text-lg font-thin shadow-sm"
+                            className="w-full mb-6 bg-[#EEEEEE] text-text-black border-2 border-black/5 hover:bg-white py-4 rounded-2xl flex items-center justify-center gap-3 text-lg font-thin "
                             onClick={handleDiscordLogin}
                         >
                             <img src="/discord_logo.png" alt="Discord" className="w-6 h-5"/>
@@ -131,7 +131,7 @@ export default function Login() {
 
                             <Button
                                 type="submit"
-                                className="w-full py-4 text-lg rounded-2xl mt-4 bg-accent-yellow text-white hover:bg-[#ffe175] font-bold shadow-sm"
+                                className="w-full py-4 text-lg rounded-2xl mt-4 bg-accent-yellow text-white hover:bg-[#ffe175] font-bold "
                                 isLoading={isLoading}
                             >
                                 Sign In

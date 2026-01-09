@@ -20,7 +20,7 @@ export default function AboutUs() {
                 className="w-full max-w-[402px] bg-rootine-bg rounded-[50px] shadow-2xl overflow-hidden mb-8 z-10"
             >
                 {/* Header */}
-                <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0 shadow-sm z-20">
+                <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0  z-20">
                      <button 
                         onClick={() => setLocation("/")}
                         className="absolute left-6 top-6 text-white hover:text-rootine-bg transition-colors"
@@ -65,7 +65,7 @@ export default function AboutUs() {
                      </p>
 
                      {/* Discord Section */}
-                     <div className="bg-white p-4 rounded-2xl shadow-sm border border-black/5 text-center">
+                     <div className="bg-white p-4 rounded-2xl  border border-black/5 text-center">
                         <h3 className="font-bold text-lg mb-1">The discord server with</h3>
                         <h2 className="font-bold text-xl text-primary-green mb-2">Rooting for You!</h2>
                         

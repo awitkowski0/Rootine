@@ -28,7 +28,7 @@ export default function MyStats() {
                 className="w-full max-w-[402px] bg-rootine-bg rounded-[50px] shadow-2xl overflow-hidden mb-8 z-10"
             >
                 {/* Header */}
-                <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0 shadow-sm z-20">
+                <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0  z-20">
                      <button 
                         onClick={() => setLocation("/")}
                         className="absolute left-6 top-6 text-white hover:text-rootine-bg transition-colors"
@@ -52,19 +52,19 @@ export default function MyStats() {
                      
                      <div className="grid grid-cols-2 gap-4 w-full mb-6">
                         {/* Streak */}
-                        <div className="bg-white p-4 rounded-2xl shadow-sm border border-black/5 text-center">
+                        <div className="bg-white p-4 rounded-2xl  border border-black/5 text-center">
                             <h3 className="text-3xl font-bold text-primary-green">{stats.streak}</h3>
                             <p className="text-xs font-bold text-neutral-dark">Day Streak</p>
                         </div>
                          {/* Total Entries */}
-                        <div className="bg-white p-4 rounded-2xl shadow-sm border border-black/5 text-center">
+                        <div className="bg-white p-4 rounded-2xl  border border-black/5 text-center">
                             <h3 className="text-3xl font-bold text-accent-yellow">{stats.totalEntries}</h3>
                             <p className="text-xs font-bold text-neutral-dark">Total Entries</p>
                         </div>
                      </div>
 
                      {/* Weekly Graph Placeholder */}
-                     <div className="w-full bg-white p-4 rounded-2xl shadow-sm border border-black/5 mb-6">
+                     <div className="w-full bg-white p-4 rounded-2xl  border border-black/5 mb-6">
                         <h3 className="text-sm font-bold text-dark-green mb-4">Mood Activity (This Week)</h3>
                         <div className="h-32 flex items-end justify-between px-2 gap-2">
                              {[3, 4, 2, 5, 4, 3, 5].map((val, i) => (
@@ -81,7 +81,7 @@ export default function MyStats() {
                      </div>
 
                      {/* Average Mood */}
-                     <div className="w-full bg-white p-4 rounded-2xl shadow-sm border border-black/5 flex items-center justify-between mb-4">
+                     <div className="w-full bg-white p-4 rounded-2xl  border border-black/5 flex items-center justify-between mb-4">
                         <div>
                             <p className="text-xs font-bold text-neutral-dark">Average Mood</p>
                             <p className="text-lg font-bold text-dark-green">{stats.averageMood}/5</p>
@@ -90,7 +90,7 @@ export default function MyStats() {
                      </div>
                      
                      {/* Top Activity */}
-                     <div className="w-full bg-white p-4 rounded-2xl shadow-sm border border-black/5 flex items-center justify-between">
+                     <div className="w-full bg-white p-4 rounded-2xl  border border-black/5 flex items-center justify-between">
                         <div>
                             <p className="text-xs font-bold text-neutral-dark">Top Activity</p>
                             <p className="text-lg font-bold text-dark-green">{stats.topActivity}</p>

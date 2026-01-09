@@ -100,7 +100,7 @@ export default function SignUpPage() {
             <p className="text-neutral-dark">Start your journey today</p>
         </div>
 
-        <div className="bg-white/50 backdrop-blur-sm border-2 border-primary-green rounded-3xl p-8 shadow-sm">
+        <div className="bg-white/50 backdrop-blur-sm border-2 border-primary-green rounded-3xl p-8 ">
             {!verifying ? (
               <>
                  {/* Social Login */}

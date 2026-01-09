@@ -28,7 +28,7 @@ export default function Calmics() {
                 className="w-full max-w-[402px] bg-rootine-bg rounded-[50px] shadow-2xl overflow-hidden mb-8 z-10"
             >
                 {/* Header */}
-                <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0 shadow-sm z-20">
+                <div className="w-full h-32 bg-primary-green rounded-b-[50px] relative flex items-center justify-center shrink-0  z-20">
                      <button 
                         onClick={() => setLocation("/")}
                         className="absolute left-6 top-6 text-white hover:text-rootine-bg transition-colors"
@@ -58,7 +58,7 @@ export default function Calmics() {
                             <motion.div
                                 key={comic.id}
                                 whileHover={{ scale: 1.05 }}
-                                className="bg-white p-2 rounded-xl shadow-sm border border-black/5 cursor-pointer"
+                                className="bg-white p-2 rounded-xl  border border-black/5 cursor-pointer"
                             >
                                 <div className="aspect-square bg-gray-100 rounded-lg mb-2 flex items-center justify-center text-xs text-center text-gray-400">
                                     Comic #{comic.id}

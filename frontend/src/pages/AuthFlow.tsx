@@ -204,7 +204,7 @@ export default function AuthFlow({ initialMode = "login" }: AuthFlowProps) {
                 />
                  <Button
                     type="submit"
-                    className="w-full py-4 text-lg rounded-2xl mt-4 bg-accent-yellow text-white hover:bg-[#ffe175] font-bold shadow-sm"
+                    className="w-full py-4 text-lg rounded-2xl mt-4 bg-accent-yellow text-white hover:bg-[#ffe175] font-bold "
                     isLoading={isLoading}
                 >
                     Verify & Start
@@ -263,7 +263,7 @@ export default function AuthFlow({ initialMode = "login" }: AuthFlowProps) {
 
             <Button
                 type="submit"
-                className="w-full py-4 text-lg rounded-2xl mt-4 bg-accent-yellow text-white hover:bg-[#ffe175] font-bold shadow-sm"
+                className="w-full py-4 text-lg rounded-2xl mt-4 bg-accent-yellow text-white hover:bg-[#ffe175] font-bold "
                 isLoading={isLoading}
             >
                 {mode === "login" ? "Sign In" : "Create Account"}
@@ -297,7 +297,7 @@ export default function AuthFlow({ initialMode = "login" }: AuthFlowProps) {
             {mode !== "verify" && (
                 <>
                 <Button
-                className="w-full mb-6 bg-gray-v-light text-text-black border-2 border-black/5 hover:bg-white py-4 rounded-2xl flex items-center justify-center gap-3 text-lg font-thin shadow-sm"
+                className="w-full mb-6 bg-gray-v-light text-text-black border-2 border-black/5 hover:bg-white py-4 rounded-2xl flex items-center justify-center gap-3 text-lg font-thin "
                 onClick={handleDiscordLogin}
                 >
                 <img src="/discord_logo.png" alt="Discord" className="w-6 h-5" />

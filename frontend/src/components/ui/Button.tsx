@@ -14,7 +14,7 @@ type CombinedProps = ButtonProps & HTMLMotionProps<"button">;
 const Button = forwardRef<HTMLButtonElement, CombinedProps>(
   ({ className, variant = "primary", size = "md", isLoading, children, ...props }, ref) => {
     const variants = {
-      primary: "bg-accent-yellow text-text-black border-2 border-black/5 shadow-sm hover:bg-yellow-400",
+      primary: "bg-accent-yellow text-text-black border-2 border-black/5  hover:bg-yellow-400",
       secondary: "bg-primary-green text-white border-2 border-transparent hover:bg-dark-green",
       ghost: "bg-transparent text-text-black hover:bg-black/5",
       outline: "bg-transparent border-2 border-gray-soft text-text-black hover:bg-gray-50",
