@@ -1,5 +1,4 @@
 import { useState, useMemo } from "react";
-import { useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { DINOS } from "../data/dinos";
 
@@ -20,11 +19,11 @@ const MENU_ITEMS = [
 ];
 
 export default function Home() {
-    const [, setLocation] = useLocation();
     const [selectedItem, setSelectedItem] = useState("User Profile");
 
     // Pick a random dino for the footer
     const randomDino = useMemo(() => {
+        // eslint-disable-next-line react-hooks/purity
         return DINOS[Math.floor(Math.random() * DINOS.length)];
     }, []);
 

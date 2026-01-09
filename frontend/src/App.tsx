@@ -50,7 +50,6 @@ function App() {
         <AuthenticateWithRedirectCallback 
             signInUrl="/login" 
             signUpUrl="/sign-up" 
-            continueUrl="/" 
         />
       </Route>
 
